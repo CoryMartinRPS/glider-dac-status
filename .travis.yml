@@ -13,11 +13,11 @@ services:
 install:
   - pip install --upgrade cython
   - pip install -r requirements/dev.txt
-  #- cd web
-  #- yarn global add grunt-cli
-  #- yarn install
-  #- grunt
-  #- cd ..
+  - cd web
+  - yarn global add grunt-cli
+  - yarn install
+  - grunt
+  - cd ..
 deploy:
   #- docker-compose up --build
 script:
