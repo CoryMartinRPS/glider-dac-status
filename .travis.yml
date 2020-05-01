@@ -19,6 +19,6 @@ install:
   - grunt
   - cd ..
 deploy:
-  #- docker-compose up --build
+  - docker-compose up --build
 script:
   - echo foo
