@@ -11,3 +11,5 @@ python:
 install:
   - pip install --upgrade cython
   - pip install -r requirements/dev.txt
+script:
+  - echo foo
