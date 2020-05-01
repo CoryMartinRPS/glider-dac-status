@@ -19,6 +19,8 @@ install:
   - grunt
   - cd ..
 deploy:
+  on:
+  branch: travis
   - docker-compose up --build
 script:
   - echo foo
