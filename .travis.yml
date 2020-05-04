@@ -18,6 +18,7 @@ install:
   - yarn install
   - grunt
   - cd ..
+  - docker volume create --name=redis_data
 deploy:
   - provider: script
     script: docker-compose up --build
