@@ -22,6 +22,6 @@ deploy:
   - provider: script
     script: docker-compose up --build
     on:
-    branch: travis
+      branch: travis
 script:
   - echo foo
