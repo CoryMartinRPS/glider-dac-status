@@ -20,7 +20,7 @@ install:
   #- cd ..
   - docker volume create --name=redis_data
   - mkdir tmp
-  - cp /web/static/json/status.json /tmp
+  - cp /glider-dac-status/web/static/json/status.json /tmp
 deploy:
   - provider: script
     script: docker-compose up --build
