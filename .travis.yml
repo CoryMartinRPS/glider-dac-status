@@ -19,8 +19,10 @@ install:
   #- grunt
   #- cd ..
   - docker volume create --name=redis_data
+  - ls
   - mkdir tmp
-  - cp /glider-dac-status/web/static/json/status.json /tmp
+  - cp ./web/static/json/status.json ./tmp
+  - ls
 deploy:
   - provider: script
     script: docker-compose up --build
