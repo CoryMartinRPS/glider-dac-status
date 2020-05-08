@@ -20,7 +20,9 @@ install:
   #- cd ..
   - docker volume create --name=redis_data
   - mkdir tmp
-  - touch ./tmp/status.json
+  - cd tmp
+  - touch status.json
+  - cd ..
 deploy:
   - provider: script
     script: docker-compose up --build
