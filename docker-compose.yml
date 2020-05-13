@@ -30,7 +30,6 @@ services:
 
   celery_beat:
     build: .
-    volumes: .
     command: celery beat -A app.celery --loglevel=info
 
 volumes:
