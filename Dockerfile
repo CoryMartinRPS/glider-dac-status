@@ -13,7 +13,8 @@ FROM python:3.6
 
 RUN mkdir -p /glider-dac-status
 RUN mkdir /glider-dac-status/logs
-COPY app.py config.yml config.local.yml flask_environments.py manage.py /glider-dac-status/
+COPY app.py config.yml flask_environments.py manage.py /glider-dac-status/
+COPY config.local.yml /glider-dac-status/config.yml
 COPY status /glider-dac-status/status
 COPY navo /glider-dac-status/navo
 COPY requirements/requirements.txt /requirements.txt
