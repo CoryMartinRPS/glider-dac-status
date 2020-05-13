@@ -7,7 +7,7 @@ services:
     ports:
       - 8000:5000
     volumes:
-      - ./config.local.yml:/glider-dac-status/config.local.yml
+      - ./config.local.yml:/glider-dac-status/config.yml
       - ./tmp/status.json:/glider-dac-status/web/static/json/status.json
     depends_on:
       - redis
@@ -23,7 +23,7 @@ services:
     restart: always
     build: .
     volumes:
-      - ./config.local.yml:/glider-dac-status/config.local.yml
+      - ./config.local.yml:/glider-dac-status/config.yml
       - ./tmp/status.json:/glider-dac-status/web/static/json/status.json
       - /tmp/web/static/profiles/:/glider-dac-status/web/static/profiles/
     depends_on:
@@ -33,7 +33,7 @@ services:
   celery_beat:
     build: .
     volumes:
-      - ./config.local.yml:/glider-dac-status/config.local.yml
+      - ./config.local.yml:/glider-dac-status/config.yml
     command: celery beat -A app.celery --loglevel=info
 
 volumes:
