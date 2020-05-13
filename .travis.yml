@@ -19,6 +19,7 @@ install:
   #- grunt
   #- cd ..
   #- python app.py
+  - cp ./config.yml ./config.local.yml
   - docker volume create --name=redis_data
 deploy:
   - provider: script
