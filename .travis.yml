@@ -11,14 +11,15 @@ python:
 services:
   - docker
 install:
-  #- pip install --upgrade cython
-  #- pip install -r requirements/dev.txt
-  #- cd web
-  #- yarn global add grunt-cli
-  #- yarn install
-  #- grunt
-  #- cd ..
   - docker volume create --name=redis_data
+  - pip install --upgrade cython
+  - pip install -r requirements/dev.txt
+  - cd web
+  - yarn global add grunt-cli
+  - yarn install
+  - grunt
+  - cd ..
+  - python app.py
 deploy:
   - provider: script
     script: docker-compose up --build
