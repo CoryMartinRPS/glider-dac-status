@@ -13,10 +13,8 @@ install:
   - pip install -r requirements/dev.txt
   - pip install -r requirements/test_requirements.txt
   - cp tests/test_status.py .
-deploy:
-  - provider: script
-    script:
-    on:
-      branch: test  
+branches:
+  only:
+  - test
 script:
   - python test_status.py
