@@ -11,9 +11,11 @@ python:
 install:
   - pip install --upgrade cython
   - pip install -r requirements/dev.txt
+  - pip install -r requirements/test_requirements.txt
+  - cp tests/test_status.py .
 deploy:
   - provider: script
-    script: echo foo
+    script: python test_status.py
     on:
       branch: test  
 script:
