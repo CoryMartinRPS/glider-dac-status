@@ -15,8 +15,8 @@ install:
   - cp tests/test_status.py .
 deploy:
   - provider: script
-    script: python test_status.py
+    script:
     on:
       branch: test  
 script:
-  - echo foo
+  - python test_status.py
