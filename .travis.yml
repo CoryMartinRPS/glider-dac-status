@@ -18,3 +18,4 @@ branches:
   - test
 script:
   - python test_status.py
+  - docker build .
