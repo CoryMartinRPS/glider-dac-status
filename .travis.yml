@@ -21,9 +21,8 @@ jobs:
     - stage: docker
       script: docker build . -t build
     - stage: test
-      script: cp tests/Dockerfile ./Dockerfile
-      script: docker build . -t test
-      
+      install: cp tests/Dockerfile ./Dockerfile
+      script: docker build . -t test      
 stages:
   - docker
   - test
