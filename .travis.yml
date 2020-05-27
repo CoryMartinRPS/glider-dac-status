@@ -9,10 +9,10 @@ python:
   #- "3.7"
   #- "3.8"
 install:
-  - pip install --upgrade cython
-  - pip install -r requirements/dev.txt
-  - pip install -r requirements/test_requirements.txt
-  - cp tests/test_status.py .
+  # - pip install --upgrade cython
+  # - pip install -r requirements/dev.txt
+  # - pip install -r requirements/test_requirements.txt
+  - cp tests/Dockerfile ./Dockerfile
 branches:
   only:
   - test
