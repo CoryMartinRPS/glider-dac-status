@@ -12,10 +12,22 @@ install:
   #- pip install --upgrade cython
   #- pip install -r requirements/dev.txt
   #- pip install -r requirements/test_requirements.txt
-  - cp tests/Dockerfile ./Dockerfile
+  #- cp tests/Dockerfile ./Dockerfile
 branches:
   only:
   - test
+jobs:
+  include:
+    - stage: docker
+      script: docker build . -t build
+    - stage: test
+      script: cp tests/Dockerfile ./Dockerfile
+      script: docker build . -t test
+      
+stages:
+  - docker
+  - test
 script:
   #- python test_status.py
-  - docker build .
+  - docker build . -t build
+  - docker build . -t test
