@@ -27,9 +27,7 @@ RUN apt-get update && \
     apt-get install -y python3-netcdf4 && \
     pip install --no-cache cython gunicorn && \
     pip install --no-cache -r /requirements.txt && \
-    pip install --no-cache -r /test_requirements.txt && \
-    rm -rf /var/lib/apt/lists/* && \
-    useradd glider
+    pip install --no-cache -r /test_requirements.txt
 
 COPY --from=buildstep /web/ /glider-dac-status/web
 	
