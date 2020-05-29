@@ -19,5 +19,5 @@ jobs:
       install: cp tests/Dockerfile ./Dockerfile
       script: docker build . -t test      
 stages:
-  #- docker
+  - docker
   - test
