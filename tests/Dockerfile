@@ -18,6 +18,7 @@ COPY status /glider-dac-status/status
 COPY navo /glider-dac-status/navo
 COPY requirements/requirements.txt /requirements.txt
 COPY tests/test_status.py /glider-dac-status/
+RUN rm -f /glider-dac-status/test/test_status.py
 COPY requirements/test_requirements.txt /test_requirements.txt
 
 WORKDIR /glider-dac-status
@@ -32,4 +33,4 @@ RUN apt-get update && \
 
 COPY --from=buildstep /web/ /glider-dac-status/web
 	
-RUN python test_status.py
+RUN pytest
