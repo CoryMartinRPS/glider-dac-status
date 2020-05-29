@@ -18,7 +18,7 @@ def client():
 
 def test_index(client):
     resp = client.get("/")
-    assert resp.status == "200 OK"
+    assert resp.status == "fail OK"
 
 def test_deployments_api(client):
     with app.app_context():
@@ -26,7 +26,7 @@ def test_deployments_api(client):
             resp = client.get('/api/deployments')
             json_data = json.loads(resp.data)
             assert (json_data["results"][0]["name"] ==
-                            "test-20200101T0000Z")
+                            "fail-20200101T0000Z")
 
 def _generate_status_json(data_type="api_return"):
     dt_now = datetime.now(tz=timezone.utc)

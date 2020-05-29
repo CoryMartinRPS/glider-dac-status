@@ -15,7 +15,7 @@ install:
   #- cp tests/Dockerfile ./Dockerfile
 branches:
   only:
-  - test
+  - failtest
 jobs:
   include:
     - stage: docker
