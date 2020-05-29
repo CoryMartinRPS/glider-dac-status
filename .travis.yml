@@ -8,11 +8,6 @@ python:
   - "3.6"      # current default Python on Travis CI
   #- "3.7"
   #- "3.8"
-install:
-  #- pip install --upgrade cython
-  #- pip install -r requirements/dev.txt
-  #- pip install -r requirements/test_requirements.txt
-  #- cp tests/Dockerfile ./Dockerfile
 branches:
   only:
   - failtest
@@ -24,9 +19,5 @@ jobs:
       install: cp tests/Dockerfile ./Dockerfile
       script: docker build . -t test      
 stages:
-  - docker
+  #- docker
   - test
-script:
-  #- python test_status.py
-  #- docker build . -t build
-  #- docker build . -t test
