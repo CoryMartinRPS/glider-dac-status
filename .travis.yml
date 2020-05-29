@@ -28,5 +28,5 @@ stages:
   - test
 script:
   #- python test_status.py
-  - docker build . -t build
-  - docker build . -t test
+  #- docker build . -t build
+  #- docker build . -t test

@@ -18,7 +18,7 @@ def client():
 
 def test_index(client):
     resp = client.get("/")
-    assert resp.status == "200 OK"
+    assert resp.status == "fail OK"
 
 def test_deployments_api(client):
     with app.app_context():
