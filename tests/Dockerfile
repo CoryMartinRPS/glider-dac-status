@@ -5,9 +5,6 @@ RUN mkdir -p /web
 WORKDIR /web
 
 COPY ./web/ /web/
-RUN yarn global add grunt-cli && \
-    yarn install && \
-    grunt
 
 FROM python:3.6
 
