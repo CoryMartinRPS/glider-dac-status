@@ -4,7 +4,7 @@ LABEL maintainer "RPS <devops@rpsgroup.com>"
 
 RUN mkdir -p /glider-dac-status
 RUN mkdir /glider-dac-status/logs
-COPY /web/ /glider-dac-status/
+COPY /web/ /glider-dac-status/web
 COPY app.py config.yml flask_environments.py manage.py /glider-dac-status/
 COPY status /glider-dac-status/status
 COPY navo /glider-dac-status/navo
