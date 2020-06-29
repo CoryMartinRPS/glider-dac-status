@@ -23,4 +23,3 @@ deploy:
   on:
     repo: CoryMartinRPS/glider-dac-status
     branch: test
-    tags: true
