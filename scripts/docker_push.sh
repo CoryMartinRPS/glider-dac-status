@@ -17,5 +17,5 @@ else
   
   echo "Tagging image with: $image_release_tag"
   docker tag glider-dac-status:latest glider-dac-status:$image_release_tag
-  docker push CoryMartinRPS/glider-dac-status
+  docker push corymartinrps/glider-dac-status
 fi
