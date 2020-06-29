@@ -14,17 +14,13 @@ jobs:
     - stage: test
       install: cp tests/Dockerfile ./Dockerfile
       script: docker build . -t test   
-    - stage: test2
-      script: echo $DOCKER_USERNAME
-      script: docker build . -t test      
 stages:
-  - test2
   - docker
   - test
 deploy:
   provider: script
   script: bash "$TRAVIS_BUILD_DIR/scripts/docker_push.sh"
   on:
-    repo: ioos/glider-dac-status
-    branch: master
+    repo: CoryMartinRPS/glider-dac-status
+    branch: test
     tags: true
