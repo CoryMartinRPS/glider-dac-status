@@ -11,15 +11,15 @@ jobs:
   include:
     - stage: docker
       script: docker build . -t glider-dac-status
+      deploy:
+        provider: script
+        script: bash "$TRAVIS_BUILD_DIR/scripts/docker_push.sh"
+        on:
+          repo: CoryMartinRPS/glider-dac-status
+          branch: test
     - stage: test
       install: cp tests/Dockerfile ./Dockerfile
       script: docker build . -t test   
 stages:
   - docker
   - test
-deploy:
-  provider: script
-  script: bash "$TRAVIS_BUILD_DIR/scripts/docker_push.sh"
-  on:
-    repo: CoryMartinRPS/glider-dac-status
-    branch: test
