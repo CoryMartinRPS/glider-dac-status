@@ -17,6 +17,7 @@ jobs:
         on:
           repo: CoryMartinRPS/glider-dac-status
           branch: test
+          tags: true
     - stage: test
       install: cp tests/Dockerfile ./Dockerfile
       script: docker build . -t test   
